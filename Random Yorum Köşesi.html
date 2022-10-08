@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Uygulama 3</title>
+    <style>
+     #div1{
+         width: 10%;
+         height: 140px;
+        position: relative;
+        top: 100px;
+        left: 25%;
+     }
+     #div2{
+         width:100%;
+         height: 70px;
+         background-color: lightcoral;
+         text-align: center;
+         color: wheat;
+
+     }
+     #div3{
+         width: 100%;
+         height: 70px;
+         background-color: lightblue;  
+         text-align: center;
+         color: wheat;
+     }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="div1"> 
+
+   <div id="div2">
+
+   </div>
+
+   <div id="div3">
+
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+ var a = [{ yorum:"Muhteşem", isim:"Rüveyda Umu" } ,
+          { yorum:"Muhteşem", isim:"Sezen Umut" },
+          { yorum:"Muhteşem", isim:"Gezen Umu" } ,
+          { yorum:"Muhteşem", isim:"Kalan Umut"} 
+
+]
+
+var random ;
+
+function sayiUret(){
+
+    random =   Math.round(Math.random()*3);
+
+}
+setInterval(function(){
+
+     sayiUret();
+
+      document.getElementById("div2").innerHTML = a[random].yorum;
+      document.getElementById("div3").innerHTML = a[random ].isim; 
+
+},2000)
+
+
+
+
+
+</script>
+</body>
+</html>
