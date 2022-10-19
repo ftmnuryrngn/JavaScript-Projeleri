@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijital Saat </title>
+    <style>
+    *{
+        margin: 0; 
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif; 
+    }
+    body{
+        background-color: blueviolet;
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .container{
+        background-color: black;
+        color: white;
+        width: 400px;
+        height: 300px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 5px solid white;
+    }
+    .hour{
+        background-color: white;
+        color: black;
+        width: 300px;
+        height: 100px;display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius:30px ;
+        border: 10px solid blueviolet;
+        margin-bottom: 30px;
+        margin-left: 40px;
+        font-size: 32px;
+    }
+    .date{
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+    .color{
+        color: white;
+    }
+     
+    
+    </style>
+</head>
+<body>
+  
+     <div class="container">
+        <div class="hour">
+            <span id="hour">13</span><span id="dot">:</span><span id="min">56</span>
+        </div>
+        <div class="date">
+            <span id="day">05</span> <span id="month">Temmuz</span> <span id="year">2025</span>
+        </div>
+     </div>
+
+
+    <script>
+
+        var Hour= document.getElementById('hour');
+        var dot = document.getElementById('dot');
+        var Minute = document.getElementById('min');
+
+        var day= document.getElementById('day');
+        var month = document.getElementById('month');
+        var year= document.getElementById('year');
+
+        var d =new Date();
+        var s = d.getHours();
+        var dk = d.getMinutes();
+
+        var gun = d.getDay();
+        var ay = d.getMonth() ;
+        var yil = d.getFullYear();
+        
+
+        setInterval(function(){
+         Hour.innerHTML = s;
+         Minute.innerHTML = dk;
+         
+         day.innerHTML = gun; 
+         var Months=[ 'OCAK','Şubat', 'MART ', 'NİSAN', 'MAYIS ','HAZİRAN','TEMMUZ','AĞUSTOS','EYLÜL','EKİM','KASIM','ARALIK'];
+         month.innerHTML= Months[ay]+ " " ;
+         year.innerHTML = yil;
+
+         dot.classList.toggle('color');
+
+
+
+       },1000)
+      
+    </script> 
+</body>
+</html>
